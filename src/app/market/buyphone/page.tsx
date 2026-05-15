@@ -1,6 +1,6 @@
+export const dynamic = "force-dynamic";
 import Image from "next/image";
 import { getAllListings } from "@/lib/listing-store";
-
 export default async function page() {
   const listings = await getAllListings();
   const priceFormatter = new Intl.NumberFormat("en-PK", {

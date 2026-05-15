@@ -89,7 +89,7 @@ function normalizeTextField(value: unknown): string | undefined {
 function cleanSummary(value: unknown): string | undefined {
   const text = normalizeTextField(value);
   if (!text) return undefined;
-  if (/^\s*[\[{].*[\]}]\s*$/s.test(text)) return undefined;
+  if (/^\s*[\[{][\s\S]*[\]}]\s*$/.test(text)) return undefined;
   return text;
 }
 
